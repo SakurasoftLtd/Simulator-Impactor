@@ -15,25 +15,58 @@ class ChooseSimulatorViewController: NSViewController {
     @IBOutlet var selectIpaButton: NSButton!
     @IBOutlet var ipaLabel: NSTextField!
     
+    var simulators = [SimulatorModel]()
+    
+    var selectedSimulator: SimulatorModel?
+    var selectedIpa: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveSimulators()
     }
     
     func retrieveSimulators() {
-        let sims = SimulatorManager.fetchSimulators()
+        simulators = SimulatorManager.fetchSimulators()
         simulatorListDropDown.removeAllItems()
-        for sim in sims {
+        simulatorListDropDown.addItem(withTitle: "- Please Select -")
+        for sim in simulators {
             simulatorListDropDown.addItem(withTitle: sim.displayString)
         }
     }
     
+    func openSimulatorWithApp() {
+        let pipe = Pipe()
+        let file = pipe.fileHandleForReading
+        let task = Process()
+        
+        task.launchPath = "/usr/bin/xcrun"
+        task.arguments = []
+        task.standardOutput = pipe
+        
+        task.launch()
+        
+        let data = file.readDataToEndOfFile()
+        file.closeFile()
+        
+//        let output = String(data: data, encoding: String.Encoding.utf8)
+//        print(output)
+    }
+    
     @IBAction func simulatorSelected(_ sender: Any) {
-        simulatorListDropDown.setTitle(simulatorListDropDown.selectedItem!.title)
+        let selectedItemTitle = simulatorListDropDown.selectedItem!.title
+        simulatorListDropDown.setTitle(selectedItemTitle)
+        guard selectedItemTitle != "- Please Select -" else {
+            return
+        }
+        
+        selectedSimulator = simulators.filter { $0.displayString == selectedItemTitle }.first
     }
     
     @IBAction func runButtonPressed(_ sender: Any) {
-        
+        guard selectedSimulator != nil && selectedIpa != nil else {
+            return
+        }
+        openSimulatorWithApp()
     }
     
     @IBAction func selectIpaButtonPressed(_ sender: Any) {
@@ -48,6 +81,7 @@ class ChooseSimulatorViewController: NSViewController {
             // got file
             let fileName = selectedFileURL.pathComponents.last!
             ipaLabel.stringValue = fileName
+            self.selectedIpa = selectedFileURL
         }
     }
 }
