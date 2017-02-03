@@ -667,7 +667,7 @@
                     <window key="window" title="Simulator Impactor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="620" y="368" width="480" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -683,11 +683,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ChooseSimulatorViewController" customModule="Simulator_Impactor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="edT-r2-ebI">
-                                <rect key="frame" x="18" y="233" width="444" height="17"/>
+                                <rect key="frame" x="18" y="163" width="444" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="ert-vi-9Ww"/>
                                 </constraints>
@@ -697,9 +697,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-Zb-wee">
-                                <rect key="frame" x="17" y="201" width="446" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-Zb-wee">
+                                <rect key="frame" x="17" y="131" width="446" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Z7e-xm-768"/>
+                                </constraints>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="6Lq-TK-uYV" id="TrL-Hi-lkP">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
@@ -729,23 +731,72 @@
                                     <action selector="runButtonPressed:" target="XfG-lQ-9wD" id="LFQ-M0-9Uy"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RQH-c7-jsf">
+                                <rect key="frame" x="18" y="101" width="444" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="NaJ-8u-Gdg"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please select a .ipa file:" id="M4m-Ij-xhV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="H67-80-HnW">
+                                <rect key="frame" x="18" y="71" width="367" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="G6N-c8-zHo"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="None Selected" id="NbD-Rj-qWg">
+                                    <font key="font" size="13" name="HelveticaNeue-Italic"/>
+                                    <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P76-ug-hKj">
+                                <rect key="frame" x="385" y="61" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="AbU-vq-QNA"/>
+                                    <constraint firstAttribute="height" constant="21" id="KZR-1U-hFw"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Select" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EBf-Qt-lIW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectIpaButtonPressed:" target="XfG-lQ-9wD" id="M9E-lK-fXS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="edT-r2-ebI" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="1lJ-FF-s5X"/>
                             <constraint firstItem="edT-r2-ebI" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="73J-5a-Qi1"/>
+                            <constraint firstItem="uyR-Zb-wee" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Bz8-Or-ccE"/>
+                            <constraint firstAttribute="trailing" secondItem="P76-ug-hKj" secondAttribute="trailing" constant="20" id="D1O-83-eZ4"/>
+                            <constraint firstItem="P76-ug-hKj" firstAttribute="leading" secondItem="H67-80-HnW" secondAttribute="trailing" constant="8" id="Hk5-al-Exz"/>
+                            <constraint firstAttribute="trailing" secondItem="RQH-c7-jsf" secondAttribute="trailing" constant="20" id="HsB-d0-kUC"/>
+                            <constraint firstItem="P76-ug-hKj" firstAttribute="top" secondItem="RQH-c7-jsf" secondAttribute="bottom" constant="12" id="IxZ-qK-Vqg"/>
+                            <constraint firstAttribute="trailing" secondItem="uyR-Zb-wee" secondAttribute="trailing" constant="20" id="Lxd-WU-3yk"/>
+                            <constraint firstItem="H67-80-HnW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Mqv-Ya-TUH"/>
                             <constraint firstAttribute="trailing" secondItem="C3C-mo-UPj" secondAttribute="trailing" constant="20" id="P6P-c1-S4r"/>
                             <constraint firstAttribute="trailing" secondItem="edT-r2-ebI" secondAttribute="trailing" constant="20" id="Ry0-wu-LVe"/>
                             <constraint firstAttribute="bottom" secondItem="C3C-mo-UPj" secondAttribute="bottom" constant="20" id="VDY-Fl-Xc9"/>
+                            <constraint firstItem="RQH-c7-jsf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="k2E-Py-NHh"/>
+                            <constraint firstItem="uyR-Zb-wee" firstAttribute="top" secondItem="edT-r2-ebI" secondAttribute="bottom" constant="8" id="rDK-XM-xd3"/>
+                            <constraint firstItem="H67-80-HnW" firstAttribute="top" secondItem="RQH-c7-jsf" secondAttribute="bottom" constant="8" id="xIX-fT-5Pc"/>
+                            <constraint firstItem="RQH-c7-jsf" firstAttribute="top" secondItem="uyR-Zb-wee" secondAttribute="bottom" constant="16" id="zZC-ga-ZZC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ipaLabel" destination="H67-80-HnW" id="6CF-Ib-ltX"/>
                         <outlet property="runButton" destination="C3C-mo-UPj" id="FSJ-kI-42d"/>
+                        <outlet property="selectIpaButton" destination="P76-ug-hKj" id="W6O-Ar-M4f"/>
                         <outlet property="simulatorListDropDown" destination="uyR-Zb-wee" id="2fd-ue-bVy"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="575"/>
         </scene>
     </scenes>
 </document>

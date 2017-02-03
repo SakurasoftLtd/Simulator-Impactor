@@ -9,9 +9,13 @@
 import Foundation
 
 struct SimulatorModel {
-    var iosVersion: String!
-    var udid: String!
-    var name: String!
+    var iosVersion: String = ""
+    var udid: String = ""
+    var name: String = ""
+    
+    var displayString: String {
+        return name + " (\(iosVersion))"
+    }
     
     init() { }
     

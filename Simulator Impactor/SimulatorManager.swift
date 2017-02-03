@@ -26,8 +26,8 @@ class SimulatorManager {
                 if let devicePlist = NSDictionary(contentsOf: folderURL.appendingPathComponent("device.plist")) {
                     
                     var simModel = SimulatorModel()
-                    simModel.name = devicePlist.object(forKey: "name") as? String
-                    simModel.udid = devicePlist.object(forKey: "UDID") as? String
+                    simModel.name = devicePlist.object(forKey: "name") as? String ?? ""
+                    simModel.udid = devicePlist.object(forKey: "UDID") as? String ?? ""
                     
                     if let runtime = devicePlist.object(forKey: "runtime") as? String {
                         let rawIosString = runtime.components(separatedBy: ".").last!
@@ -41,6 +41,9 @@ class SimulatorManager {
             
         } catch {
             print("Path does not exist.")
+        }
+        foundSimulators.sort { (sim1, sim2) -> Bool in
+            sim1.name > sim2.name
         }
         return foundSimulators
     }
