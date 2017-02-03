@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DB71E44A97E00E0F3FE /* AppDelegate.swift */; };
-		27856DBA1E44A97E00E0F3FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DB91E44A97E00E0F3FE /* ViewController.swift */; };
 		27856DBC1E44A97E00E0F3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBB1E44A97E00E0F3FE /* Assets.xcassets */; };
 		27856DBF1E44A97E00E0F3FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBD1E44A97E00E0F3FE /* Main.storyboard */; };
+		27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */; };
+		27856DC91E44AD5600E0F3FE /* SimulatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */; };
+		27856DCB1E44AE1900E0F3FE /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		27856DB41E44A97E00E0F3FE /* Simulator Impactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simulator Impactor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27856DB71E44A97E00E0F3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27856DB91E44A97E00E0F3FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27856DBB1E44A97E00E0F3FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27856DBE1E44A97E00E0F3FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27856DC01E44A97E00E0F3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSimulatorViewController.swift; sourceTree = "<group>"; };
+		27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorModel.swift; sourceTree = "<group>"; };
+		27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				27856DB71E44A97E00E0F3FE /* AppDelegate.swift */,
-				27856DB91E44A97E00E0F3FE /* ViewController.swift */,
+				27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */,
 				27856DBB1E44A97E00E0F3FE /* Assets.xcassets */,
 				27856DBD1E44A97E00E0F3FE /* Main.storyboard */,
 				27856DC01E44A97E00E0F3FE /* Info.plist */,
+				27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */,
+				27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */,
 			);
 			path = "Simulator Impactor";
 			sourceTree = "<group>";
@@ -133,8 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27856DBA1E44A97E00E0F3FE /* ViewController.swift in Sources */,
+				27856DCB1E44AE1900E0F3FE /* SimulatorManager.swift in Sources */,
+				27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */,
 				27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */,
+				27856DC91E44AD5600E0F3FE /* SimulatorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
