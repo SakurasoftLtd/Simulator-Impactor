@@ -35,21 +35,56 @@ class ChooseSimulatorViewController: NSViewController {
     }
     
     func openSimulatorWithApp() {
-        let pipe = Pipe()
-        let file = pipe.fileHandleForReading
-        let task = Process()
         
-        task.launchPath = "/usr/bin/xcrun"
-        task.arguments = []
-        task.standardOutput = pipe
         
-        task.launch()
+        extractBundleIdentifierFromIPA { (bundleId) in
+            let launchTask = Process()
+            launchTask.launchPath = "/usr/bin/xcrun"
+            launchTask.arguments = ["instruments", "-w", self.selectedSimulator!.launchString]
+            launchTask.launch()
+            
+            let installTask = Process()
+            installTask.launchPath = "/usr/bin/xcrun"
+            installTask.arguments = ["simctl", "install", "booted", self.selectedIpa!.path]
+            installTask.launch()
+            
+            let runTask = Process()
+            runTask.launchPath = "/usr/bin/xcrun"
+            runTask.arguments = ["simctl", "launch", "booted", "com.ctt.co.uk.ringgo"]
+            runTask.launch()
+        }
+    }
+    
+    func extractBundleIdentifierFromIPA(completion: @escaping (_ bundleId: String?) -> Void) {
+        guard selectedIpa != nil else {
+            completion(nil)
+            return
+        }
         
-        let data = file.readDataToEndOfFile()
-        file.closeFile()
+        var tempDir = NSTemporaryDirectory()
+        tempDir = tempDir + "\(arc4random_uniform(2048)).ipa"
         
-//        let output = String(data: data, encoding: String.Encoding.utf8)
-//        print(output)
+        let copyTask = Process()
+        copyTask.launchPath = "/bin/cp"
+        copyTask.arguments = ["-f", selectedIpa!.path, tempDir]
+        copyTask.terminationHandler = { (task) in
+            
+            if task.terminationStatus == 0 {
+                let unzipTask = Process()
+                unzipTask.launchPath = "/usr/bin/unzip"
+                unzipTask.arguments = ["-o", tempDir]
+                unzipTask.terminationHandler = { (task) in
+                    if task.terminationStatus == 0 {
+                        let infoPlistPath = tempDir + "/Payload/Info.plist"
+                        let plist = NSDictionary(contentsOfFile: infoPlistPath)
+                        let bundleId = plist?.object(forKey: kCFBundleIdentifierKey) as? String
+                        completion(bundleId)
+                    }
+                }
+                unzipTask.launch()
+            }
+        }
+        copyTask.launch()
     }
     
     @IBAction func simulatorSelected(_ sender: Any) {

@@ -17,6 +17,10 @@ struct SimulatorModel {
         return name + " (\(iosVersion))"
     }
     
+    var launchString: String {
+        return "\(name) (\(iosVersion.replacingOccurrences(of: "iOS ", with: ""))) [\(udid)]"
+    }
+    
     init() { }
     
     init(iosVersion: String, udid: String, name: String) {
