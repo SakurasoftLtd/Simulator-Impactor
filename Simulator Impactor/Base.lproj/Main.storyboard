@@ -180,7 +180,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="NaJ-8u-Gdg"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please select a .ipa file:" id="M4m-Ij-xhV">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Please select a .app file:" id="M4m-Ij-xhV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -208,7 +208,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="selectIpaButtonPressed:" target="XfG-lQ-9wD" id="M9E-lK-fXS"/>
+                                    <action selector="selectAppButtonPressed:" target="XfG-lQ-9wD" id="vhK-QZ-eeu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,9 +232,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ipaLabel" destination="H67-80-HnW" id="6CF-Ib-ltX"/>
+                        <outlet property="appLabel" destination="H67-80-HnW" id="KAo-Ja-Gzc"/>
                         <outlet property="runButton" destination="C3C-mo-UPj" id="FSJ-kI-42d"/>
-                        <outlet property="selectIpaButton" destination="P76-ug-hKj" id="W6O-Ar-M4f"/>
+                        <outlet property="selectAppButton" destination="P76-ug-hKj" id="k2I-Py-eyh"/>
                         <outlet property="simulatorListDropDown" destination="uyR-Zb-wee" id="2fd-ue-bVy"/>
                     </connections>
                 </viewController>
