@@ -3,7 +3,7 @@
 //  Simulator Impactor
 //
 //  Created by Jacob King on 03/02/2017.
-//  Copyright © 2017 Cobalt Telephone Technologies. All rights reserved.
+//  Copyright © 2017 Militia Softworks Ltd. All rights reserved.
 //
 
 import Cocoa
@@ -13,7 +13,9 @@ class ChooseSimulatorViewController: NSViewController {
     @IBOutlet var simulatorListDropDown: NSPopUpButton!
     @IBOutlet var runButton: NSButton!
     @IBOutlet var selectAppButton: NSButton!
+    @IBOutlet var helpButton: NSButton!
     @IBOutlet var appLabel: NSTextField!
+    @IBOutlet var versionLabel: NSTextField!
     
     var simulators = [SimulatorModel]()
     
@@ -44,7 +46,7 @@ class ChooseSimulatorViewController: NSViewController {
         }
     }
     
-    @IBAction func simulatorSelected(_ sender: Any) {
+    @IBAction func userDidSelectSimulator(_ sender: Any) {
         let selectedItemTitle = simulatorListDropDown.selectedItem!.title
         simulatorListDropDown.setTitle(selectedItemTitle)
         guard selectedItemTitle != "- Please Select -" else {
@@ -54,7 +56,7 @@ class ChooseSimulatorViewController: NSViewController {
         selectedSimulator = simulators.filter { $0.displayString == selectedItemTitle }.first
     }
     
-    @IBAction func runButtonPressed(_ sender: Any) {
+    @IBAction func run(_ sender: Any) {
         guard selectedSimulator != nil && selectedApp != nil else {
             DispatchQueue.main.async {
                 let alert = NSAlert()
@@ -70,7 +72,11 @@ class ChooseSimulatorViewController: NSViewController {
         }
     }
     
-    @IBAction func selectAppButtonPressed(_ sender: Any) {
+    @IBAction func showHelp(_ sender: Any) {
+        
+    }
+    
+    @IBAction func openAppSelection(_ sender: Any) {
         Utilities.openPanelForAppFileType { (url) in
             if let selectedFileURL = url {
                 let fileName = selectedFileURL.pathComponents.last!

@@ -3,7 +3,7 @@
 //  Simulator Impactor
 //
 //  Created by Jacob King on 08/02/2017.
-//  Copyright © 2017 Cobalt Telephone Technologies. All rights reserved.
+//  Copyright © 2017 Militia Softworks Ltd. All rights reserved.
 //
 
 import Cocoa

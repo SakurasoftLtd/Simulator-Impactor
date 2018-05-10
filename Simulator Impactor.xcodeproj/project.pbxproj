@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165F736B20A45FB70084AA5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165F736A20A45FB70084AA5D /* Main.storyboard */; };
 		27786E191E4B22A200B8B67A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27786E181E4B22A200B8B67A /* Utilities.swift */; };
 		27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DB71E44A97E00E0F3FE /* AppDelegate.swift */; };
 		27856DBC1E44A97E00E0F3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBB1E44A97E00E0F3FE /* Assets.xcassets */; };
-		27856DBF1E44A97E00E0F3FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBD1E44A97E00E0F3FE /* Main.storyboard */; };
 		27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */; };
 		27856DC91E44AD5600E0F3FE /* SimulatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */; };
 		27856DCB1E44AE1900E0F3FE /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165F736A20A45FB70084AA5D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		27786E181E4B22A200B8B67A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		27856DB41E44A97E00E0F3FE /* Simulator Impactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simulator Impactor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27856DB71E44A97E00E0F3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27856DBB1E44A97E00E0F3FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		27856DBE1E44A97E00E0F3FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27856DC01E44A97E00E0F3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSimulatorViewController.swift; sourceTree = "<group>"; };
 		27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorModel.swift; sourceTree = "<group>"; };
@@ -39,6 +39,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165F736120A45F530084AA5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27856DC01E44A97E00E0F3FE /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		165F736220A45F580084AA5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				165F736920A45F970084AA5D /* Storyboards */,
+				165F736820A45F920084AA5D /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		165F736320A45F5D0084AA5D /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		165F736420A45F610084AA5D /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				27856DB71E44A97E00E0F3FE /* AppDelegate.swift */,
+				165F736720A45F700084AA5D /* Utilities */,
+				165F736620A45F6D0084AA5D /* Models */,
+				165F736520A45F660084AA5D /* View Controllers */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		165F736520A45F660084AA5D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		165F736620A45F6D0084AA5D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		165F736720A45F700084AA5D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				27786E181E4B22A200B8B67A /* Utilities.swift */,
+				27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		165F736820A45F920084AA5D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				27856DBB1E44A97E00E0F3FE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		165F736920A45F970084AA5D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				165F736A20A45FB70084AA5D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		27856DAB1E44A97E00E0F3FE = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +134,10 @@
 		27856DB61E44A97E00E0F3FE /* Simulator Impactor */ = {
 			isa = PBXGroup;
 			children = (
-				27856DB71E44A97E00E0F3FE /* AppDelegate.swift */,
-				27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */,
-				27856DBB1E44A97E00E0F3FE /* Assets.xcassets */,
-				27856DBD1E44A97E00E0F3FE /* Main.storyboard */,
-				27856DC01E44A97E00E0F3FE /* Info.plist */,
-				27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */,
-				27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */,
-				27786E181E4B22A200B8B67A /* Utilities.swift */,
+				165F736420A45F610084AA5D /* Code */,
+				165F736320A45F5D0084AA5D /* Dependencies */,
+				165F736220A45F580084AA5D /* Resources */,
+				165F736120A45F530084AA5D /* Supporting Files */,
 			);
 			path = "Simulator Impactor";
 			sourceTree = "<group>";
@@ -98,12 +170,12 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Cobalt Telephone Technologies";
+				ORGANIZATIONNAME = "Militia Softworks Ltd";
 				TargetAttributes = {
 					27856DB31E44A97E00E0F3FE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9784LS6WH6;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 76PP8GDRJH;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -131,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27856DBC1E44A97E00E0F3FE /* Assets.xcassets in Resources */,
-				27856DBF1E44A97E00E0F3FE /* Main.storyboard in Resources */,
+				165F736B20A45FB70084AA5D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,17 +223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		27856DBD1E44A97E00E0F3FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27856DBE1E44A97E00E0F3FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		27856DC11E44A97E00E0F3FE /* Debug */ = {
@@ -258,12 +319,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9784LS6WH6;
-				INFOPLIST_FILE = "Simulator Impactor/Info.plist";
+				DEVELOPMENT_TEAM = 76PP8GDRJH;
+				INFOPLIST_FILE = "$(SRCROOT)/Simulator Impactor/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ctt.co.uk.Simulator-Impactor";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.militiasoftworks.simulatorimpactor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c4d8fbf9-4f47-4dfe-bf00-7be227a58cd0";
+				PROVISIONING_PROFILE_SPECIFIER = "Simulator Impactor - Developer Signed";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,12 +337,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 9784LS6WH6;
-				INFOPLIST_FILE = "Simulator Impactor/Info.plist";
+				DEVELOPMENT_TEAM = 76PP8GDRJH;
+				INFOPLIST_FILE = "$(SRCROOT)/Simulator Impactor/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ctt.co.uk.Simulator-Impactor";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.militiasoftworks.simulatorimpactor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c4d8fbf9-4f47-4dfe-bf00-7be227a58cd0";
+				PROVISIONING_PROFILE_SPECIFIER = "Simulator Impactor - Developer Signed";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
