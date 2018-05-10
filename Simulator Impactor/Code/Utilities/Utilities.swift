@@ -32,4 +32,9 @@ class Utilities {
             handler?(nil)
         }
     }
+    
+    static func getBundleVersionString() -> String {
+        let verStr = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        return verStr
+    }
 }

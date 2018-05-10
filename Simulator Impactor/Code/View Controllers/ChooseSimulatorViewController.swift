@@ -25,6 +25,7 @@ class ChooseSimulatorViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         retrieveSimulators()
+        versionLabel.stringValue = "v" + Utilities.getBundleVersionString()
     }
     
     func retrieveSimulators() {
