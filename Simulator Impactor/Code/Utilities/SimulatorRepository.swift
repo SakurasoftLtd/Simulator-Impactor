@@ -1,5 +1,5 @@
 //
-//  SimulatorManager.swift
+//  SimulatorRepository.swift
 //  Simulator Impactor
 //
 //  Created by Jacob King on 03/02/2017.
@@ -9,12 +9,12 @@
 import Foundation
 import Cocoa
 
-class SimulatorManager {
+class SimulatorRepository {
     
     static let simulatorPathComponent = "Library/Developer/CoreSimulator/Devices/"
     
-    static func fetchSimulators() -> [SimulatorModel] {
-        var foundSimulators = [SimulatorModel]()
+    static func fetchSimulators() -> [Simulator] {
+        var foundSimulators = [Simulator]()
         
         let findTask = Process()
         let outPipe = Pipe()
@@ -36,7 +36,7 @@ class SimulatorManager {
                 guard deviceString.contains("Simulator") else {
                     continue // We only want simulators
                 }
-                let sim = SimulatorModel(launchString: deviceString)
+                let sim = Simulator(launchString: deviceString)
                 foundSimulators.append(sim)
             }
         }
@@ -54,7 +54,7 @@ class SimulatorManager {
         killTask.launch()
     }
     
-    static func launchSimulator(sim: SimulatorModel, onSuccessfulCompletion: ((_ process: Process) -> Void)? = nil) {
+    static func launchSimulator(sim: Simulator, onSuccessfulCompletion: ((_ process: Process) -> Void)? = nil) {
         let launchTask = Process()
         launchTask.launchPath = "/usr/bin/xcrun"
         launchTask.arguments = ["instruments", "-w", sim.launchString]

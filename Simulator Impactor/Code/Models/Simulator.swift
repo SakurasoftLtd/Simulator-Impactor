@@ -1,5 +1,5 @@
 //
-//  SimulatorModel.swift
+//  Simulator.swift
 //  Simulator Impactor
 //
 //  Created by Jacob King on 03/02/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SimulatorModel {
+struct Simulator {
     var iosVersion: String = ""
     var udid: String = ""
     var name: String = ""

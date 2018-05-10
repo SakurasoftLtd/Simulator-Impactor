@@ -17,9 +17,9 @@ class ChooseSimulatorViewController: NSViewController {
     @IBOutlet var appLabel: NSTextField!
     @IBOutlet var versionLabel: NSTextField!
     
-    var simulators = [SimulatorModel]()
+    var simulators = [Simulator]()
     
-    var selectedSimulator: SimulatorModel?
+    var selectedSimulator: Simulator?
     var selectedApp: URL?
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class ChooseSimulatorViewController: NSViewController {
     }
     
     func retrieveSimulators() {
-        simulators = SimulatorManager.fetchSimulators()
+        simulators = SimulatorRepository.fetchSimulators()
         simulatorListDropDown.removeAllItems()
         simulatorListDropDown.addItem(withTitle: "- Please Select -")
         for sim in simulators {
@@ -38,9 +38,9 @@ class ChooseSimulatorViewController: NSViewController {
     
     func openSimulatorWithApp() {
         if let bundleId = Utilities.extractBundleIdentifierFromApp(app: self.selectedApp!) {
-            SimulatorManager.launchSimulator(sim: self.selectedSimulator!, onSuccessfulCompletion: { (process) in
-                SimulatorManager.installApp(atPath: self.selectedApp!, onSuccessfulCompletion: { (process) in
-                    SimulatorManager.runApp(withBundleId: bundleId)
+            SimulatorRepository.launchSimulator(sim: self.selectedSimulator!, onSuccessfulCompletion: { (process) in
+                SimulatorRepository.installApp(atPath: self.selectedApp!, onSuccessfulCompletion: { (process) in
+                    SimulatorRepository.runApp(withBundleId: bundleId)
                 })
             })
         }
@@ -67,7 +67,7 @@ class ChooseSimulatorViewController: NSViewController {
             }
             return
         }
-        SimulatorManager.killRunningSimulators { (process) in
+        SimulatorRepository.killRunningSimulators { (process) in
             self.openSimulatorWithApp()
         }
     }

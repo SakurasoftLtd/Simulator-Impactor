@@ -12,8 +12,8 @@
 		27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DB71E44A97E00E0F3FE /* AppDelegate.swift */; };
 		27856DBC1E44A97E00E0F3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBB1E44A97E00E0F3FE /* Assets.xcassets */; };
 		27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */; };
-		27856DC91E44AD5600E0F3FE /* SimulatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */; };
-		27856DCB1E44AE1900E0F3FE /* SimulatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */; };
+		27856DC91E44AD5600E0F3FE /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DC81E44AD5600E0F3FE /* Simulator.swift */; };
+		27856DCB1E44AE1900E0F3FE /* SimulatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DCA1E44AE1900E0F3FE /* SimulatorRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		27856DBB1E44A97E00E0F3FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27856DC01E44A97E00E0F3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSimulatorViewController.swift; sourceTree = "<group>"; };
-		27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorModel.swift; sourceTree = "<group>"; };
-		27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorManager.swift; sourceTree = "<group>"; };
+		27856DC81E44AD5600E0F3FE /* Simulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
+		27856DCA1E44AE1900E0F3FE /* SimulatorRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulatorRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		165F736620A45F6D0084AA5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				27856DC81E44AD5600E0F3FE /* SimulatorModel.swift */,
+				27856DC81E44AD5600E0F3FE /* Simulator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				27786E181E4B22A200B8B67A /* Utilities.swift */,
-				27856DCA1E44AE1900E0F3FE /* SimulatorManager.swift */,
+				27856DCA1E44AE1900E0F3FE /* SimulatorRepository.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -214,11 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27856DCB1E44AE1900E0F3FE /* SimulatorManager.swift in Sources */,
+				27856DCB1E44AE1900E0F3FE /* SimulatorRepository.swift in Sources */,
 				27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */,
 				27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */,
 				27786E191E4B22A200B8B67A /* Utilities.swift in Sources */,
-				27856DC91E44AD5600E0F3FE /* SimulatorModel.swift in Sources */,
+				27856DC91E44AD5600E0F3FE /* Simulator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
