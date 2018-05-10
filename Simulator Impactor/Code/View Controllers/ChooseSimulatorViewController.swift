@@ -72,10 +72,6 @@ class ChooseSimulatorViewController: NSViewController {
         }
     }
     
-    @IBAction func showHelp(_ sender: Any) {
-        
-    }
-    
     @IBAction func openAppSelection(_ sender: Any) {
         Utilities.openPanelForAppFileType { (url) in
             if let selectedFileURL = url {

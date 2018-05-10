@@ -25,7 +25,7 @@ class Utilities {
         select.canChooseDirectories = false
         select.canCreateDirectories = false
         select.allowedFileTypes = ["app"]
-        if let selectedFileURL = select.runModal() == NSFileHandlingPanelOKButton ? select.urls.first : nil {
+        if let selectedFileURL = select.runModal().rawValue == NSFileHandlingPanelOKButton ? select.urls.first : nil {
             // got file
             handler?(selectedFileURL)
         } else {

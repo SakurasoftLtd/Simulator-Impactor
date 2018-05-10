@@ -104,13 +104,12 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller-->
+        <!--Main Window-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" userLabel="Main Window" sceneMemberID="viewController">
                     <window key="window" title="Simulator Impactor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="620" y="368" width="480" height="200"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -124,6 +123,66 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Help Window-->
+        <scene sceneID="PyV-t2-1XF">
+            <objects>
+                <windowController id="qNs-IW-kmK" userLabel="Help Window" sceneMemberID="viewController">
+                    <window key="window" title="Help" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="9mn-la-zaH">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="482"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="qNs-IW-kmK" id="y1A-Hk-g6f"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="jZH-qF-rHn" kind="relationship" relationship="window.shadowedContentViewController" id="qNd-zt-E1h"/>
+                    </connections>
+                </windowController>
+                <customObject id="XvP-u8-ezr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="141"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="ppK-rX-9do">
+            <objects>
+                <viewController id="jZH-qF-rHn" customClass="HelpViewController" customModule="Simulator_Impactor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="UTb-pR-wJz">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="482"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="mhL-Hp-BPT">
+                                <rect key="frame" x="18" y="20" width="444" height="442"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" id="Dmx-Ao-bf7">
+                                    <font key="font" metaFont="system"/>
+                                    <mutableString key="title">Simulator Impactor Help
+
+Simulator Impactor allows you to install and run iOS apps compuled for the Simulator (in other words, compiled for amd64 arch CPUs) without the need for Xcode. It is simple to use and lightweight.
+
+To get started, simply select your simulator of choice from the drop down. If no simulators appear here, then chances are you're missing the Xcode command line tools. Installing and opening Xcode should fix this. The first time Xcode is opened, it will prompt you to install the command line tools, please do so and restart Simulator Impactor.
+
+Next, click the 'Select' button and navigate to your .app file. Select it with the dialogue. If you are unable to select the file, please ensure it is in .app format, and NOT in .ipa format. IPAs are only for packaging the app up for deployment via the App Store or other means.
+
+Finally, hit run. The program should close any open simulators you may have and launch the simulator you selected. Once it has launched, you will see your app installing and subsequently running. Should this not be the case, the program will present an informative error explaining what went wrong and what steps you can take to rectify the issue.
+
+Please note that this is very much a Skunkworks tool and as such, I expect there to be bugs. Please feel free to contribute by either raising an issue on GitHub, or creating a PR with a fix.</mutableString>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mhL-Hp-BPT" secondAttribute="trailing" constant="20" id="H5Q-fl-DRL"/>
+                            <constraint firstAttribute="bottom" secondItem="mhL-Hp-BPT" secondAttribute="bottom" constant="20" id="KL7-Uv-1DO"/>
+                            <constraint firstItem="mhL-Hp-BPT" firstAttribute="leading" secondItem="UTb-pR-wJz" secondAttribute="leading" constant="20" id="rw2-gu-b4O"/>
+                            <constraint firstItem="mhL-Hp-BPT" firstAttribute="top" secondItem="UTb-pR-wJz" secondAttribute="top" constant="20" id="sUk-3y-skY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="teE-sM-5j6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661" y="795"/>
         </scene>
         <!--Choose Simulator View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -256,7 +315,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="showHelp:" target="XfG-lQ-9wD" id="uun-Il-ZSq"/>
+                                    <segue destination="qNs-IW-kmK" kind="show" id="eIi-iP-t8T"/>
                                 </connections>
                             </button>
                         </subviews>

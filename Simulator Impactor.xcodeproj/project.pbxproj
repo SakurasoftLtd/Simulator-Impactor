@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		165F736B20A45FB70084AA5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165F736A20A45FB70084AA5D /* Main.storyboard */; };
+		165F736D20A465760084AA5D /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F736C20A465760084AA5D /* HelpViewController.swift */; };
 		27786E191E4B22A200B8B67A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27786E181E4B22A200B8B67A /* Utilities.swift */; };
 		27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856DB71E44A97E00E0F3FE /* AppDelegate.swift */; };
 		27856DBC1E44A97E00E0F3FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27856DBB1E44A97E00E0F3FE /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		165F736A20A45FB70084AA5D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		165F736C20A465760084AA5D /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		27786E181E4B22A200B8B67A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		27856DB41E44A97E00E0F3FE /* Simulator Impactor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simulator Impactor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27856DB71E44A97E00E0F3FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				27856DC61E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift */,
+				165F736C20A465760084AA5D /* HelpViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,12 +172,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Militia Softworks Ltd";
 				TargetAttributes = {
 					27856DB31E44A97E00E0F3FE = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 76PP8GDRJH;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -215,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27856DCB1E44AE1900E0F3FE /* SimulatorRepository.swift in Sources */,
+				165F736D20A465760084AA5D /* HelpViewController.swift in Sources */,
 				27856DC71E44AA1B00E0F3FE /* ChooseSimulatorViewController.swift in Sources */,
 				27856DB81E44A97E00E0F3FE /* AppDelegate.swift in Sources */,
 				27786E191E4B22A200B8B67A /* Utilities.swift in Sources */,
@@ -234,15 +239,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -283,15 +296,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -329,7 +350,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c4d8fbf9-4f47-4dfe-bf00-7be227a58cd0";
 				PROVISIONING_PROFILE_SPECIFIER = "Simulator Impactor - Developer Signed";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -347,7 +369,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c4d8fbf9-4f47-4dfe-bf00-7be227a58cd0";
 				PROVISIONING_PROFILE_SPECIFIER = "Simulator Impactor - Developer Signed";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

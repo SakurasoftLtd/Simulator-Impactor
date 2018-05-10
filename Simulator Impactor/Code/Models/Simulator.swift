@@ -21,21 +21,26 @@ struct Simulator {
     
     init() { }
     
-    init(launchString: String) {
-        let iosVersionRegex = try! NSRegularExpression(pattern: "\\d+[.]\\d+([.]\\d+)?", options: [])
-        if let match = iosVersionRegex.firstMatch(in: launchString, options: [], range: NSMakeRange(0, launchString.characters.count)) {
-            self.iosVersion = NSString(string: launchString).substring(with: match.range)
+    init?(launchString: String) {
+        
+        guard
+            let iosVersionRegex = try? NSRegularExpression(pattern: "\\d+[.]\\d+([.]\\d+)?", options: []),
+            let uuidRegex = try? NSRegularExpression(pattern: "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", options: .caseInsensitive)
+        else {
+            return nil
         }
         
-        let uuidRegex = try! NSRegularExpression(pattern: "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", options: .caseInsensitive)
-        if let match = uuidRegex.firstMatch(in: launchString, options: [], range: NSMakeRange(0, launchString.characters.count)) {
-            self.udid = NSString(string: launchString).substring(with: match.range)
+        guard
+            let iosVerRange = iosVersionRegex.firstMatch(in: launchString, options: [], range: NSMakeRange(0, launchString.count)),
+            let udidRange = uuidRegex.firstMatch(in: launchString, options: [], range: NSMakeRange(0, launchString.count)),
+            let deviceNameEndIndex = launchString.index(of: "(")
+        else {
+            return nil
         }
         
-        if let deviceNameEndIndex = launchString.characters.index(of: "(") {
-            self.name = launchString.substring(to: launchString.index(deviceNameEndIndex, offsetBy: -1))
-        }
-        
+        self.name = String(launchString[..<deviceNameEndIndex])
+        self.iosVersion = NSString(string: launchString).substring(with: iosVerRange.range) as String
+        self.udid = NSString(string: launchString).substring(with: udidRange.range) as String
         self.launchString = launchString
     }
 }

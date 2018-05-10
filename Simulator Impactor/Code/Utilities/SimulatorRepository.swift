@@ -33,10 +33,10 @@ class SimulatorRepository {
             print(devicesArray)
             
             for deviceString in devicesArray {
-                guard deviceString.contains("Simulator") else {
+                guard deviceString.contains("Simulator"),
+                let sim = Simulator(launchString: deviceString) else {
                     continue // We only want simulators
                 }
-                let sim = Simulator(launchString: deviceString)
                 foundSimulators.append(sim)
             }
         }
