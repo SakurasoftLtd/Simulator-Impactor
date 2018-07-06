@@ -37,7 +37,7 @@ Should this not happen, please check the help screen of the tool, accessible by 
 
 If you feel like you can improve this tool then by all means get involved and submit a PR!
 
-## Footnotes
+## Footnotes
 
 1. It is easy to produce builds for `amd64`. Any build compiled in a developer environment for the simulator is suitible. Simply locate your app in the build products folder, and use that in the tool.<br>Alternatively, if you use a build machine, simply include a command line argument to set the build architecture and omit the archive export step. The product you receive from this will be suitible.
 
